@@ -1,0 +1,33 @@
+<html>
+
+   <head>
+      <title>The jQuery Example</title>
+      <script type = "text/javascript"
+         src = "jquery-2.2.3.js"></script>
+
+      <script type = "text/javascript" language = "javascript">
+         $(document).ready(function() {
+
+            $("#driver").click(function(event){
+               $.getJSON('example.json', function(jd) {
+                  $('#stage').html('<p> Timer: ' + jd.hours + ':' + jd.minutes +'</p>');
+               });
+            });
+
+         });
+      </script>
+   </head>
+
+   <body>
+
+      <h1>Meeting Timer</h1>
+
+      <div id = "stage">
+         STAGE
+      </div>
+
+      <input type = "button" id = "driver" value = "Load Data" />
+
+   </body>
+
+</html>
